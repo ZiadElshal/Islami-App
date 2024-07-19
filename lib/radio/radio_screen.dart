@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app/app_colors.dart';
+import 'package:islami_app/providers/app_config_provider.dart';
+import 'package:provider/provider.dart';
 
 class RadioScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<AppConfigProvider>(context);
     return Container(
       width: double.infinity,
       height: double.infinity,
@@ -18,13 +22,13 @@ class RadioScreen extends StatelessWidget {
               vertical: MediaQuery.of(context).size.height * 0.03,
             ),
             child: Text(
-              "إذاعة القرآن الكريم",
+              AppLocalizations.of(context)!.quran_radio,
               style: Theme.of(context).textTheme.bodyMedium,
             ),
           ),
           Padding(
             padding: EdgeInsets.symmetric(
-              vertical: MediaQuery.of(context).size.height * 0.05,
+              vertical: MediaQuery.of(context).size.height * 0.02,
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -33,7 +37,9 @@ class RadioScreen extends StatelessWidget {
                   onTap: () {},
                   child: Icon(
                     Icons.first_page_rounded,
-                    color: AppColors.primaryLightColor,
+                    color: provider.appTheme == ThemeMode.light
+                        ? AppColors.primaryMoreLightColor
+                        : AppColors.yellowColor,
                     size: 40,
                   ),
                 ),
@@ -41,7 +47,9 @@ class RadioScreen extends StatelessWidget {
                   onTap: () {},
                   child: Icon(
                     Icons.play_arrow_rounded,
-                    color: AppColors.primaryLightColor,
+                    color: provider.appTheme == ThemeMode.light
+                        ? AppColors.primaryMoreLightColor
+                        : AppColors.yellowColor,
                     size: 40,
                   ),
                 ),
@@ -49,7 +57,9 @@ class RadioScreen extends StatelessWidget {
                   onTap: () {},
                   child: Icon(
                     Icons.last_page_rounded,
-                    color: AppColors.primaryLightColor,
+                    color: provider.appTheme == ThemeMode.light
+                        ? AppColors.primaryMoreLightColor
+                        : AppColors.yellowColor,
                     size: 40,
                   ),
                 ),

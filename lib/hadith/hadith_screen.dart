@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app/app_colors.dart';
 import 'package:islami_app/hadith/hadith.dart';
 import 'package:islami_app/hadith/item_hadith_name.dart';
+import 'package:islami_app/providers/app_config_provider.dart';
+import 'package:provider/provider.dart';
 
 class HadithScreen extends StatefulWidget {
   @override
@@ -14,21 +17,26 @@ class _HadithScreenState extends State<HadithScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<AppConfigProvider>(context);
     loadHadithFile();
 
     return Column(
       children: [
         Expanded(child: Image.asset("assets/images/hadith_logo.png")),
         Divider(
-          color: AppColors.primaryLightColor,
+          color: provider.appTheme == ThemeMode.light
+              ? AppColors.primaryLightColor
+              : AppColors.yellowColor,
           thickness: 4,
         ),
         Text(
-          "الأحاديث",
+          AppLocalizations.of(context)!.hdith_name,
           style: Theme.of(context).textTheme.bodyMedium,
         ),
         Divider(
-          color: AppColors.primaryLightColor,
+          color: provider.appTheme == ThemeMode.light
+              ? AppColors.primaryLightColor
+              : AppColors.yellowColor,
           thickness: 4,
         ),
         Expanded(
@@ -36,7 +44,9 @@ class _HadithScreenState extends State<HadithScreen> {
           child: ListView.separated(
             separatorBuilder: (context, index) {
               return Divider(
-                color: AppColors.primaryLightColor,
+                color: provider.appTheme == ThemeMode.light
+                    ? AppColors.primaryLightColor
+                    : AppColors.yellowColor,
                 thickness: 2,
               );
             },

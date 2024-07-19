@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app/app_colors.dart';
+import 'package:islami_app/providers/app_config_provider.dart';
 import 'package:islami_app/quran/item_sura_details.dart';
 import 'package:islami_app/quran/sura_details_arguments.dart';
+import 'package:provider/provider.dart';
 
 class SuraDetailsScreen extends StatefulWidget {
   static const String routeName = "sura_details_screen";
@@ -16,6 +19,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<AppConfigProvider>(context);
     var args =
         ModalRoute.of(context)?.settings.arguments as SuraDetailsArguments;
     if (verses.isEmpty) {
@@ -23,17 +27,24 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
     }
 
     return Stack(children: [
-      Image.asset(
-        "assets/images/background_screen.png",
-        width: double.infinity,
-        height: double.infinity,
-        fit: BoxFit.cover,
-      ),
+      provider.appTheme == ThemeMode.light
+          ? Image.asset(
+              "assets/images/background_screen_light.png",
+              width: double.infinity,
+              height: double.infinity,
+              fit: BoxFit.cover,
+            )
+          : Image.asset(
+              "assets/images/background_screen_dark.png",
+              width: double.infinity,
+              height: double.infinity,
+              fit: BoxFit.cover,
+            ),
       Scaffold(
         appBar: AppBar(
           centerTitle: true,
           title: Text(
-            "إسلامي",
+            AppLocalizations.of(context)!.app_title,
             style: Theme.of(context).textTheme.headlineLarge,
           ),
         ),
@@ -44,24 +55,34 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
             vertical: MediaQuery.of(context).size.height * 0.08,
           ),
           decoration: BoxDecoration(
-            color: AppColors.whiteColor,
+            color: provider.appTheme == ThemeMode.light
+                ? AppColors.whiteColor
+                : AppColors.primaryDarkColor,
             borderRadius: BorderRadius.circular(25),
           ),
           child: Column(
             children: [
               Text(
-                "سورة ${args.name}",
-                style: Theme.of(context).textTheme.bodySmall,
+                provider.appLanguage == "ar"
+                    ? "سورة ${args.name}"
+                    : "${args.name}",
+                style: provider.appTheme == ThemeMode.light
+                    ? Theme.of(context).textTheme.bodySmall
+                    : Theme.of(context).textTheme.bodySmall?.copyWith(
+                          color: AppColors.whiteColor,
+                        ),
                 textAlign: TextAlign.center,
               ),
               Divider(
-                color: AppColors.primaryLightColor,
+                color: provider.appTheme == ThemeMode.light
+                    ? AppColors.primaryLightColor
+                    : AppColors.whiteColor,
                 thickness: 2,
                 indent: 60,
                 endIndent: 60,
               ),
               SizedBox(
-                height: 20,
+                height: MediaQuery.of(context).size.height * 0.02,
               ),
               verses.isEmpty
                   ? CircularProgressIndicator(
@@ -71,7 +92,9 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                       child: ListView.separated(
                         separatorBuilder: (context, index) {
                           return Divider(
-                            color: AppColors.primaryLightColor,
+                            color: provider.appTheme == ThemeMode.light
+                                ? AppColors.primaryLightColor
+                                : AppColors.whiteColor,
                             thickness: 2,
                           );
                         },

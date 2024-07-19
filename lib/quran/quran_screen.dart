@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app/app_colors.dart';
+import 'package:islami_app/providers/app_config_provider.dart';
 import 'package:islami_app/quran/item_sura_name.dart';
 import 'package:islami_app/quran/item_sura_number.dart';
+import 'package:islami_app/quran/item_sura_number_arabic.dart';
+import 'package:provider/provider.dart';
 
 class QuranScreen extends StatelessWidget {
-  List<String> suraNames = [
+  List<String> suraNamesArabic = [
     "الفاتحه",
     "البقرة",
     "آل عمران",
@@ -120,7 +124,239 @@ class QuranScreen extends StatelessWidget {
     "الفلق",
     "الناس"
   ];
-  List<int> versesNumber = [
+  List<String> versesNumberArabic = [
+    "٧",
+    "٢٨٦",
+    "٢٠٠",
+    "١٧٦",
+    "١٢٠",
+    "١٦٥",
+    "٢٠٦",
+    "٧٥",
+    "١٢٩",
+    "١٠٩",
+    "١٢٣",
+    "١١١",
+    "٤٣",
+    "٥٢",
+    "٩٩",
+    "١٢٨",
+    "١١١",
+    "١١٠",
+    "٩٨",
+    "١٣٥",
+    "١١٢",
+    "٧٨",
+    "١١٨",
+    "٦٤",
+    "٧٧",
+    "٢٢٧",
+    "٩٣",
+    "٨٨",
+    "٦٩",
+    "٦٠",
+    "٣٤",
+    "٣٠",
+    "٧٣",
+    "٥٤",
+    "٤٥",
+    "٨٣",
+    "١٨٢",
+    "٨٨",
+    "٧٥",
+    "٨٥",
+    "٥٤",
+    "٥٣",
+    "٨٩",
+    "٥٩",
+    "٣٧",
+    "٣٥",
+    "٣٨",
+    "٢٩",
+    "١٨",
+    "٤٥",
+    "٦٠",
+    "٤٩",
+    "٦٢",
+    "٥٥",
+    "٧٨",
+    "٩٦",
+    "٢٩",
+    "٢٢",
+    "٢٤",
+    "١٣",
+    "١٤",
+    "١١",
+    "١١",
+    "١٨",
+    "١٢",
+    "١٢",
+    "٣٠",
+    "٥٢",
+    "٥٢",
+    "٤٤",
+    "٢٨",
+    "٢٨",
+    "٢٠",
+    "٥٦",
+    "٤٠",
+    "٣١",
+    "٥٠",
+    "٤٠",
+    "٤٦",
+    "٤٢",
+    "٢٩",
+    "١٩",
+    "٣٦",
+    "٢٥",
+    "٢٢",
+    "١٧",
+    "١٩",
+    "٢٦",
+    "٣٠",
+    "٢٠",
+    "١٥",
+    "٢١",
+    "١١",
+    "٨",
+    "٥",
+    "١٩",
+    "٥",
+    "٨",
+    "٨",
+    "١١",
+    "١١",
+    "٨",
+    "٣",
+    "٩",
+    "٥",
+    "٤",
+    "٦",
+    "٣",
+    "٦",
+    "٣",
+    "٥",
+    "٤",
+    "٥",
+    "٦"
+  ];
+  List<String> suraNamesEnglish = [
+    "Al-Fatihah",
+    "Al-Baqarah",
+    "Aal-Imraan",
+    "An-Nisaa",
+    "Al-Maaidah",
+    "Al-An'aam",
+    "Al-A'raaf",
+    "Al-Anfal",
+    "At-Tawbah",
+    "Yunus",
+    "Hud",
+    "Yusuf",
+    "Ar-Ra'd",
+    "Ibrahim",
+    "Al-Hijr",
+    "An-Nahl",
+    "Al-Israa",
+    "Al-Kahf",
+    "Maryam",
+    "Ta-Ha",
+    "Al-Anbiyaa",
+    "Al-Hajj",
+    "Al-Muminoon",
+    "An-Noor",
+    "Al-Furqaan",
+    "Ash-Shu'araa",
+    "An-Naml",
+    "Al-Qasas",
+    "Al-Ankaboot",
+    "Ar-Room",
+    "Luqman",
+    "As-Sajda",
+    "Al-Ahzaab",
+    "Saba",
+    "Fatir",
+    "Yaseen",
+    "As-Saffat",
+    "Saad",
+    "Az-Zumar",
+    "Ghafir",
+    "Fussilat",
+    "Ash-Shura",
+    "Az-Zukhruf",
+    "Ad-Dukhan",
+    "Al-Jathiya",
+    "Al-Ahqaf",
+    "Muhammad",
+    "Al-Fath",
+    "Al-Hujurat",
+    "Qaaf",
+    "Adh-Dhariyat",
+    "At-Tur",
+    "An-Najm",
+    "Al-Qamar",
+    "Ar-Rahman",
+    "Al-Waqiaah",
+    "Al-Hadid",
+    "Al-Mujadilah",
+    "Al-Hashr",
+    "Al-Mumtahanah",
+    "As-Saff",
+    "Al-Jumu'ah",
+    "Al-Munafiqun",
+    "At-Taghabun",
+    "At-Talaq",
+    "At-Tahrim",
+    "Al-Mulk",
+    "Al-Qalam",
+    "Al-Haqqah",
+    "Al-Ma'arij",
+    "Nooh",
+    "Al-Jinn",
+    "Al-Muzzammil",
+    "Al-Muddaththir",
+    "Al-Qiyamah",
+    "Al-Insaan",
+    "Al-Mursalat",
+    "An-Naba",
+    "An-Nazi'aat",
+    "Abasa",
+    "At-Takwir",
+    "Al-Infitar",
+    "Al-Mutaffifin",
+    "Al-Inshiqaq",
+    "Al-Burooj",
+    "At-Taariq",
+    "Al-A'laa",
+    "Al-Ghashiyah",
+    "Al-Fajr",
+    "Al-Balad",
+    "Ash-Shams",
+    "Al-Lail",
+    "Ad-Duhaa",
+    "Al-Sharh",
+    "At-Tin",
+    "Al-Alaq",
+    "Al-Qadr",
+    "Al-Bayyinah",
+    "Az-Zalzalah",
+    "Al-Aadiyaat",
+    "Al-Qaari'ah",
+    "At-Takaathur",
+    "Al-Asr",
+    "Al-Humazah",
+    "Al-Fil",
+    "Quraysh",
+    "Al-Maa'un",
+    "Al-Kawthar",
+    "Al-Kaafiroon",
+    "An-Nasr",
+    "Al-Masad",
+    "Al-Ikhlas",
+    "Al-Falaq",
+    "An-Naas"
+  ];
+  List<int> versesNumberEnglish = [
     7,
     286,
     200,
@@ -239,35 +475,56 @@ class QuranScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<AppConfigProvider>(context);
     return Column(
       children: [
         Expanded(child: Image.asset("assets/images/quran_logo.png")),
         Divider(
-          color: AppColors.primaryLightColor,
+          color: provider.appTheme == ThemeMode.light
+              ? AppColors.primaryLightColor
+              : AppColors.yellowColor,
           thickness: 4,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Text(
-              "عدد الآيات ",
-              style: Theme.of(context).textTheme.bodyMedium,
-            ),
+            provider.appLanguage == "ar"
+                ? Text(
+                    AppLocalizations.of(context)!.sura_name,
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  )
+                : Expanded(
+                    child: Text(
+                      AppLocalizations.of(context)!.sura_name,
+                      style: Theme.of(context).textTheme.bodyMedium,
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
             Container(
-              width: 2.5, // or any other width you want
-              height: 40, // fixed height
+              width: 2.5,
+              //MediaQuery.of(context).size.width * 0.01,
+              height: 40,
               decoration: BoxDecoration(
-                color: AppColors.primaryLightColor,
+                color: provider.appTheme == ThemeMode.light
+                    ? AppColors.primaryLightColor
+                    : AppColors.yellowColor,
               ),
             ),
-            Text(
-              "اسم السورة",
-              style: Theme.of(context).textTheme.bodyMedium,
+            provider.appLanguage == "ar"
+                ? Text(
+                    AppLocalizations.of(context)!.number_of_verses,
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  )
+                : Text(
+                    AppLocalizations.of(context)!.number_of_verses,
+                    style: Theme.of(context).textTheme.bodyMedium,
             ),
           ],
         ),
         Divider(
-          color: AppColors.primaryLightColor,
+          color: provider.appTheme == ThemeMode.light
+              ? AppColors.primaryLightColor
+              : AppColors.yellowColor,
           thickness: 4,
         ),
         Expanded(
@@ -279,7 +536,9 @@ class QuranScreen extends StatelessWidget {
                 child: ListView.separated(
                   separatorBuilder: (context, index) {
                     return Divider(
-                      color: AppColors.primaryLightColor,
+                      color: provider.appTheme == ThemeMode.light
+                          ? AppColors.primaryLightColor
+                          : AppColors.yellowColor,
                       thickness: 2,
                     );
                   },
@@ -287,23 +546,32 @@ class QuranScreen extends StatelessWidget {
                     return Row(
                       children: [
                         Expanded(
-                          child: ItemSuraNumber(number: versesNumber[index]),
+                          child: provider.appLanguage == "ar"
+                              ? ItemSuraName(
+                                  name: suraNamesArabic[index], index: index)
+                              : ItemSuraName(
+                                  name: suraNamesEnglish[index], index: index),
                         ),
                         Container(
-                          width: 2.5, // or any other width you want
-                          height: 40, // fixed height
+                          width: 2.5,
+                          height: 40,
                           decoration: BoxDecoration(
-                            color: AppColors.primaryLightColor,
+                            color: provider.appTheme == ThemeMode.light
+                                ? AppColors.primaryLightColor
+                                : AppColors.yellowColor,
                           ),
                         ),
                         Expanded(
-                          child: ItemSuraName(
-                              name: suraNames[index], index: index),
+                          child: provider.appLanguage == "ar"
+                              ? ItemSuraNumberArabic(
+                                  number: versesNumberArabic[index])
+                              : ItemSuraNumber(
+                                  number: versesNumberEnglish[index]),
                         ),
                       ],
                     );
                   },
-                  itemCount: suraNames.length,
+                  itemCount: suraNamesArabic.length,
                 ),
               ),
             ],

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app/app_colors.dart';
 import 'package:islami_app/hadith/hadith.dart';
 import 'package:islami_app/hadith/item_hadith_details.dart';
+import 'package:islami_app/providers/app_config_provider.dart';
+import 'package:provider/provider.dart';
 
 class HadithDetailsScreen extends StatefulWidget {
   static const String routeName = "hadith_details_screen";
@@ -13,20 +16,28 @@ class HadithDetailsScreen extends StatefulWidget {
 class _SuraDetailsScreenState extends State<HadithDetailsScreen> {
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<AppConfigProvider>(context);
     var args = ModalRoute.of(context)?.settings.arguments as Hadith;
 
     return Stack(children: [
-      Image.asset(
-        "assets/images/background_screen.png",
-        width: double.infinity,
-        height: double.infinity,
-        fit: BoxFit.cover,
-      ),
+      provider.appTheme == ThemeMode.light
+          ? Image.asset(
+              "assets/images/background_screen_light.png",
+              width: double.infinity,
+              height: double.infinity,
+              fit: BoxFit.cover,
+            )
+          : Image.asset(
+              "assets/images/background_screen_dark.png",
+              width: double.infinity,
+              height: double.infinity,
+              fit: BoxFit.cover,
+            ),
       Scaffold(
         appBar: AppBar(
           centerTitle: true,
           title: Text(
-            "إسلامي",
+            AppLocalizations.of(context)!.app_title,
             style: Theme.of(context).textTheme.headlineLarge,
           ),
         ),
@@ -37,33 +48,35 @@ class _SuraDetailsScreenState extends State<HadithDetailsScreen> {
             vertical: MediaQuery.of(context).size.height * 0.08,
           ),
           decoration: BoxDecoration(
-            color: AppColors.whiteColor,
+            color: provider.appTheme == ThemeMode.light
+                ? AppColors.whiteColor
+                : AppColors.primaryDarkColor,
             borderRadius: BorderRadius.circular(25),
           ),
           child: Column(
             children: [
               Text(
                 args.title,
-                style: Theme.of(context).textTheme.bodySmall,
+                style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                      color: provider.appTheme == ThemeMode.light
+                          ? AppColors.blackColor
+                          : AppColors.whiteColor,
+                    ),
                 textAlign: TextAlign.center,
               ),
               Divider(
-                color: AppColors.primaryLightColor,
+                color: provider.appTheme == ThemeMode.light
+                    ? AppColors.primaryLightColor
+                    : AppColors.whiteColor,
                 thickness: 2,
                 indent: 30,
                 endIndent: 30,
               ),
               SizedBox(
-                height: 20,
+                height: MediaQuery.of(context).size.height * 0.02,
               ),
               Expanded(
                 child: ListView.builder(
-                  // separatorBuilder: (context, index) {
-                  //   return Divider(
-                  //     color: AppColors.primaryLightColor,
-                  //     thickness: 2,
-                  //   );
-                  // },
                   itemBuilder: (context, index) {
                     return ItemHadithDetails(content: args.content[index]);
                   },
