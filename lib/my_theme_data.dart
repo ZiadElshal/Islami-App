@@ -11,8 +11,6 @@ class MyThemeData {
       backgroundColor: Colors.transparent,
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
-      selectedIconTheme: IconThemeData(size: 35),
-      unselectedIconTheme: IconThemeData(size: 35),
       selectedItemColor: AppColors.blackColor,
       unselectedItemColor: AppColors.whiteColor,
       backgroundColor: AppColors.primaryLightColor,

@@ -15,5 +15,7 @@
   "english": "English",
   "theme": "Theme",
   "light": "Light",
-  "dark": "Dark"
+  "dark": "Dark",
+  "systemDefault": "System Default",
+  "save_changes": "Save changes"
 }

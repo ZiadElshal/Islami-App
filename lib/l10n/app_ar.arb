@@ -15,5 +15,7 @@
   "english": "الإنجليزية",
   "theme": "النمط",
   "light": "مضيء",
-  "dark": "مظلم"
+  "dark": "مظلم",
+  "systemDefault": "النظام الافتراضي",
+  "save_changes": "حفظ التغيرات"
 }

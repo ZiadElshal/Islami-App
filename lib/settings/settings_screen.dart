@@ -70,6 +70,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
           SizedBox(
             height: 100,
           ),
+
+          ///theme
           Text(
             AppLocalizations.of(context)!.theme,
             style: Theme.of(context).textTheme.bodyMedium,
@@ -117,6 +119,32 @@ class _SettingsScreenState extends State<SettingsScreen> {
               ),
             ),
           ),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.12,
+          ),
+          ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                ///width  ///height
+                fixedSize: Size(MediaQuery.of(context).size.width * 0.500,
+                    MediaQuery.of(context).size.height * 0.06),
+                backgroundColor: provider.appTheme == ThemeMode.light
+                    ? AppColors.primaryMoreLightColor
+                    : AppColors.yellowColor,
+              ),
+              onPressed: () {
+                provider.saveDataLocalization();
+                setState(() {});
+              },
+              child: FittedBox(
+                fit: BoxFit.contain,
+                child: Text(
+                  AppLocalizations.of(context)!.save_changes,
+                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                        color: AppColors.blackColor,
+                      ),
+                  textAlign: TextAlign.center,
+                ),
+              ))
         ],
       ),
     );
