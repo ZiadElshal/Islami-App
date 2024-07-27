@@ -120,7 +120,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ),
           ),
           SizedBox(
-            height: MediaQuery.of(context).size.height * 0.12,
+            height: MediaQuery.of(context).size.height * 0.15,
           ),
           ElevatedButton(
               style: ElevatedButton.styleFrom(
