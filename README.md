@@ -63,32 +63,38 @@ personalized experience.
 
 <p align="center">
   <img src="https://github.com/oso020/ISLAMI-APP/blob/development/screen_shots/Splash.png" alt="Light" width="220" style="margin: 10px;"/>
-  <img src="https://github.com/oso020/ISLAMI-APP/blob/development/screen_shots/Quran.png" alt="Light" width="220" style="margin: 10px;"/>
-  <img src="https://github.com/oso020/ISLAMI-APP/blob/development/screen_shots/Quran_Details.png" alt="Light" width="220" style="margin: 10px;"/>
+  <img src="https://github.com/ZiadElshal/islami_app/blob/master/screen_shots/light/islami_app_%20quraan%20screen.png?raw=true" alt="Light" width="220" style="margin: 10px;"/>
+  <img src="https://github.com/ZiadElshal/islami_app/blob/master/screen_shots/light/islami_app_%20quraan%20screen%20details.png?raw=true" alt="Light" width="220" style="margin: 10px;"/>
 </p>
 <p align="center">
-  <img src="https://github.com/oso020/ISLAMI-APP/blob/development/screen_shots/Hadeth.png" alt="Light" width="220" style="margin: 10px;"/>
-  <img src="https://github.com/oso020/ISLAMI-APP/blob/development/screen_shots/Hadeth_Details.png" alt="Light" width="220" style="margin: 10px;"/>
-  <img src="https://github.com/oso020/ISLAMI-APP/blob/development/screen_shots/Radio.png" alt="Light" width="220" style="margin: 10px;"/>
+  <img src="https://github.com/ZiadElshal/islami_app/blob/master/screen_shots/light/islami_app_%20hadith%20screen.png?raw=true" alt="Light" width="220" style="margin: 10px;"/>
+  <img src="https://github.com/ZiadElshal/islami_app/blob/master/screen_shots/light/islami_app_%20hadith%20screen%20details.png?raw=true" alt="Light" width="220" style="margin: 10px;"/>
+  <img src="https://github.com/ZiadElshal/islami_app/blob/master/screen_shots/light/islami_app_%20radio%20screen.png?raw=true" alt="Light" width="220" style="margin: 10px;"/>
+  <img src="https://github.com/ZiadElshal/islami_app/blob/master/screen_shots/light/islami_app_%20sebha%20screen.png?raw=true" alt="Light" width="220" style="margin: 10px;"/>
 </p>
 <p align="center">
-  <img src="https://github.com/oso020/ISLAMI-APP/blob/development/screen_shots/Settings.png" alt="Light" width="220" style="margin: 10px;"/>
+  <img src="https://github.com/ZiadElshal/islami_app/blob/master/screen_shots/light/islami_app_%20settings%20screen.png?raw=true" alt="Light" width="220" style="margin: 10px;"/>
+  <img src="https://github.com/ZiadElshal/islami_app/blob/master/screen_shots/light/islami_app_%20settings%20language%20bottomSheet.png?raw=true" alt="Light" width="220" style="margin: 10px;"/>
+  <img src="https://github.com/ZiadElshal/islami_app/blob/master/screen_shots/light/islami_app_%20settings%20mode%20bottomSheet.png?raw=true" alt="Light" width="220" style="margin: 10px;"/>
 </p>
 
 ### Dark Mode
 
 <p align="center">
   <img src="https://github.com/oso020/ISLAMI-APP/blob/development/screen_shots/Splash_Dark.png" alt="Light" width="220" style="margin: 10px;"/>
-  <img src="https://github.com/oso020/ISLAMI-APP/blob/development/screen_shots/Quran_Dark.png" alt="Light" width="220" style="margin: 10px;"/>
-  <img src="https://github.com/oso020/ISLAMI-APP/blob/development/screen_shots/Quran_Details_Dark.png" alt="Light" width="220" style="margin: 10px;"/>
+  <img src="https://github.com/ZiadElshal/islami_app/blob/master/screen_shots/dark/islami_app_%20quraan%20screen_dark.png?raw=true" alt="Light" width="220" style="margin: 10px;"/>
+  <img src="https://github.com/ZiadElshal/islami_app/blob/master/screen_shots/dark/islami_app_%20quraan%20screen_dark%20details.png?raw=true" alt="Light" width="220" style="margin: 10px;"/>
 </p>
 <p align="center">
-  <img src="https://github.com/oso020/ISLAMI-APP/blob/development/screen_shots/Hadeth_Dark.png" alt="Light" width="220" style="margin: 10px;"/>
-  <img src="https://github.com/oso020/ISLAMI-APP/blob/development/screen_shots/Hadeth_Details_Dark.png" alt="Light" width="220" style="margin: 10px;"/>
-  <img src="https://github.com/oso020/ISLAMI-APP/blob/development/screen_shots/Radio_Dark.png" alt="Light" width="220" style="margin: 10px;"/>
+  <img src="https://github.com/ZiadElshal/islami_app/blob/master/screen_shots/dark/islami_app_%20hadith%20screen_dark.png?raw=true" alt="Light" width="220" style="margin: 10px;"/>
+  <img src="https://github.com/ZiadElshal/islami_app/blob/master/screen_shots/dark/islami_app_%20hadith%20screen%20details_dark.png?raw=true" alt="Light" width="220" style="margin: 10px;"/>
+  <img src="https://github.com/ZiadElshal/islami_app/blob/master/screen_shots/dark/islami_app_%20radio%20screen_dark.png?raw=true" alt="Light" width="220" style="margin: 10px;"/>
+  <img src="https://github.com/ZiadElshal/islami_app/blob/master/screen_shots/dark/islami_app_%20sebha%20screen_dark.png?raw=true" alt="Light" width="220" style="margin: 10px;"/>
 </p>
 <p align="center">
-  <img src="https://github.com/oso020/ISLAMI-APP/blob/development/screen_shots/Settings_Dark.png" alt="Light" width="220" style="margin: 10px;"/>
+  <img src="https://github.com/ZiadElshal/islami_app/blob/master/screen_shots/dark/islami_app_%20settings%20screen_dark.png?raw=true" alt="Light" width="220" style="margin: 10px;"/>
+  <img src="https://github.com/ZiadElshal/islami_app/blob/master/screen_shots/light/islami_app_%20settings%20language%20bottomSheet.png?raw=true" alt="Light" width="220" style="margin: 10px;"/>
+  <img src="https://github.com/ZiadElshal/islami_app/blob/master/screen_shots/dark/islami_app_%20settings%20mode%20bottomSheet_dark.png?raw=true" alt="Light" width="220" style="margin: 10px;"/>
 </p>
 
 ## License
