@@ -62,7 +62,7 @@ personalized experience.
 ### Light Mode
 
 <p align="center">
-  <img src="https://github.com/oso020/ISLAMI-APP/blob/development/screen_shots/Splash.png" alt="Light" width="220" style="margin: 10px;"/>
+  <img src="https://github.com/ZiadElshal/islami_app/blob/master/screen_shots/light/splash_screen_light.png?raw=true" alt="Light" width="220" style="margin: 10px;"/>
   <img src="https://github.com/ZiadElshal/islami_app/blob/master/screen_shots/light/islami_app_%20quraan%20screen.png?raw=true" alt="Light" width="220" style="margin: 10px;"/>
   <img src="https://github.com/ZiadElshal/islami_app/blob/master/screen_shots/light/islami_app_%20quraan%20screen%20details.png?raw=true" alt="Light" width="220" style="margin: 10px;"/>
 </p>
@@ -81,7 +81,7 @@ personalized experience.
 ### Dark Mode
 
 <p align="center">
-  <img src="https://github.com/oso020/ISLAMI-APP/blob/development/screen_shots/Splash_Dark.png" alt="Light" width="220" style="margin: 10px;"/>
+  <img src="https://github.com/ZiadElshal/islami_app/blob/master/screen_shots/dark/splash_screen_dark.png?raw=true" alt="Light" width="220" style="margin: 10px;"/>
   <img src="https://github.com/ZiadElshal/islami_app/blob/master/screen_shots/dark/islami_app_%20quraan%20screen_dark.png?raw=true" alt="Light" width="220" style="margin: 10px;"/>
   <img src="https://github.com/ZiadElshal/islami_app/blob/master/screen_shots/dark/islami_app_%20quraan%20screen_dark%20details.png?raw=true" alt="Light" width="220" style="margin: 10px;"/>
 </p>
