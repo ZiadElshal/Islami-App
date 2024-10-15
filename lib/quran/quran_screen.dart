@@ -8,6 +8,7 @@ import 'package:islami_app/quran/item_sura_number_arabic.dart';
 import 'package:provider/provider.dart';
 
 class QuranScreen extends StatelessWidget {
+  ///sura name and versesNumber
   List<String> suraNamesArabic = [
     "الفاتحه",
     "البقرة",
