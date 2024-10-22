@@ -33,7 +33,7 @@ personalized experience.
 1. *Clone the Repository*
 
    bash
-   git clone https://github.com/ZiadElshal/islami_app.git
+   git clone https://github.com/ZiadElshal/Islami-App.git
 
 
 2. *Navigate to the Project Directory*
@@ -82,7 +82,7 @@ personalized experience.
 
 <p align="center">
   <img src="https://github.com/ZiadElshal/islami_app/blob/master/screen_shots/dark/splash_screen_dark.png?raw=true" alt="Light" width="200" style="margin: 10px;"/>
-  <img src="https://github.com/ZiadElshal/islami_app/blob/master/screen_shots/dark/islami_app_%20quraan%20screen_dark.png?raw=true" alt="Light" width="200" style="margin: 10px;"/>
+  <img src="httphttps://github.com/ZiadElshal/To-Do-App/blob/master/screenshots/light/splash_screen_light.png?raw=trues://github.com/ZiadElshal/islami_app/blob/master/screen_shots/dark/islami_app_%20quraan%20screen_dark.png?raw=true" alt="Light" width="200" style="margin: 10px;"/>
   <img src="https://github.com/ZiadElshal/islami_app/blob/master/screen_shots/dark/islami_app_%20quraan%20screen%20details_dark.png?raw=true" alt="Light" width="200" style="margin: 10px;"/>
 </p>
 <p align="center">
